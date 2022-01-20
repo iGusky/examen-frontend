@@ -9,6 +9,20 @@
       "precio": 2500,
       "categoria": "Computacion",
       "imagen": "mon-acer-14.jpg"
+    },
+    {
+      "nombre": "SSD 124GB",
+      "precio": 700,
+      "categoria": "Computo",
+      "imagen": "",
+      "id": 8
+    },
+    {
+      "nombre": "Cubrebocas desechable",
+      "precio": 8,
+      "categoria": "Generico",
+      "imagen": "",
+      "id": 10
     }
   ]
 }
