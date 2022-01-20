@@ -1,0 +1,14 @@
+{
+  "usuarios": [
+    {}
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Monitor Acer 14'",
+      "precio": 2500,
+      "categoria": "Computacion",
+      "imagen": "mon-acer-14.jpg"
+    }
+  ]
+}
