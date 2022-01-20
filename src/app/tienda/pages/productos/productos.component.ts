@@ -14,7 +14,7 @@ export class ProductosComponent implements OnInit {
     nombre:    '',
     precio:     0,
     categoria: '',
-    imagen:    ''
+    imagen:    'https://unsplash.it/400/200' // Image placeholder
   };
 
   actualizando: boolean = false;
@@ -84,7 +84,6 @@ export class ProductosComponent implements OnInit {
         })
       }
     })
-   
   }
 
   cargarProducto( producto: Producto, indice: number ){
@@ -93,7 +92,7 @@ export class ProductosComponent implements OnInit {
     this.indice = indice
   }
   
-  actualizarProducto( producto: Producto, id: number = -1){
+  actualizarProducto( producto: Producto, id: number = 0){
     if(this.producto.nombre === '' || this.producto.categoria === ''){
       Swal.fire({
         title: "Error",
@@ -117,13 +116,21 @@ export class ProductosComponent implements OnInit {
       })
   }
 
+  verProducto( producto: Producto ){
+    Swal.fire({
+      title: producto.nombre,
+      imageUrl: producto.imagen,
+      text: '$' + producto.precio
+    })
+  }
+
   reiniciarFormulario(){
-    this.actualizando = false
+    this.actualizando = false;
     this.producto = {
       nombre:    '',
       precio:     0,
       categoria: '',
-      imagen:    ''
+      imagen:    'https://unsplash.it/400/200'
     };
   }
 

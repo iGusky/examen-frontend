@@ -1,28 +1,34 @@
 {
   "usuarios": [
-    {}
+    {
+      "nombre": "José Alfredo",
+      "apellidoPaterno": "Jiménez",
+      "apellidoMaterno": "Milán",
+      "permisos": "Ventas",
+      "id": 2
+    },
+    {
+      "nombre": "Citlalli Itzel",
+      "apellidoPaterno": "Arceo",
+      "apellidoMaterno": "García",
+      "permisos": "Recursos Humanos",
+      "id": 3
+    },
+    {
+      "nombre": "Gustavo Adolfo",
+      "apellidoPaterno": "Hernández",
+      "apellidoMaterno": "Morales",
+      "permisos": "Gerente",
+      "id": 4
+    }
   ],
   "productos": [
     {
-      "id": 1,
-      "nombre": "Monitor Acer 14'",
+      "nombre": "Monitor Acer 14\"",
       "precio": 2500,
-      "categoria": "Computacion",
-      "imagen": "mon-acer-14.jpg"
-    },
-    {
-      "nombre": "SSD 124GB",
-      "precio": 700,
       "categoria": "Computo",
-      "imagen": "",
-      "id": 8
-    },
-    {
-      "nombre": "Cubrebocas desechable",
-      "precio": 8,
-      "categoria": "Generico",
-      "imagen": "",
-      "id": 10
+      "imagen": "https://unsplash.it/400/200",
+      "id": 1
     }
   ]
 }

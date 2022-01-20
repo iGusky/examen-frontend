@@ -33,12 +33,19 @@
       class="form-control"
     />
   </div>
-  
-  <button (click)="guardarProducto()" class="btn btn-primary mt-4" *ngIf="!actualizando">
+
+  <button
+    (click)="guardarProducto()"
+    class="btn btn-primary mt-4"
+    *ngIf="!actualizando"
+  >
     Guardar
   </button>
   <div class="row mt-4 btn-group" *ngIf="actualizando">
-    <button (click)="actualizarProducto(this.producto, producto.id)" class="btn btn-success col-6" >
+    <button
+      (click)="actualizarProducto(this.producto, producto.id)"
+      class="btn btn-success col-6"
+    >
       Actualizar Producto
     </button>
     <button (click)="reiniciarFormulario()" class="btn btn-danger col-6">
@@ -49,10 +56,10 @@
 
 <h3 class="mt-5">Lista de productos</h3>
 <hr />
-<div class="table-responsive">
-  <table class="table table-hover">
-    <thead>
-      <tr>
+<div class="table-responsive-md">
+  <table class="table table-hover align-middle">
+    <thead class="table-dark">
+      <tr class="text-center">
         <th>ID</th>
         <th>Nombre</th>
         <th>Precio</th>
@@ -61,16 +68,33 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let producto of productos; let indice = index">
-        <th>{{ producto.id }}</th>
-        <th>{{ producto.nombre }}</th>
-        <th>{{ producto.precio | currency }}</th>
-        <th>{{ producto.categoria }}</th>
-        <th class="btn-group">
-          <button class="btn btn-success">Ver</button>
-          <button class="btn btn-warning" (click)="cargarProducto(producto, indice)">Editar</button>
-          <button class="btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar</button>
-        </th>
+      <tr
+        *ngFor="let producto of productos; let indice = index"
+        class="text-center"
+      >
+        <td>{{ producto.id }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio | currency }}</td>
+        <td>{{ producto.categoria }}</td>
+        <td class="row">
+          <div class="btn-group btn-group-sm col" role="group">
+            <button class="btn btn-success" (click)="verProducto(producto)">
+              Ver
+            </button>
+            <button
+              class="btn btn-warning"
+              (click)="cargarProducto(producto, indice)"
+            >
+              Editar
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="eliminarProducto(producto.id)"
+            >
+              Eliminar
+            </button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

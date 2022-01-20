@@ -1,1 +1,108 @@
-<p>usuarios works!</p>
+<h2>Usuarios</h2>
+<h3>Crear usuario</h3>
+<hr />
+<form autocomplete="off" class="row">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input
+      type="text"
+      name="nombre"
+      id="nombre"
+      [(ngModel)]="usuario.nombre"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="apellidoPat">Apellido paterno</label>
+    <input
+      type="text"
+      name="apellidoPat"
+      id="apellidoPat"
+      [(ngModel)]="usuario.apellidoPaterno"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="apellidoMat">Apellido materno</label>
+    <input
+      type="text"
+      name="apellidoMat"
+      id="apellidoMat"
+      [(ngModel)]="usuario.apellidoMaterno"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="permisos">Permiso</label>
+    <select
+      name="permisos"
+      id="permiso"
+      class="form-control"
+      [(ngModel)]="usuario.permisos"
+    >
+      <option value="Ventas">Ventas</option>
+      <option value="Recursos Humanos">Recursos Humanos</option>
+      <option value="Gerente">Gerente</option>
+    </select>
+  </div>
+  <button
+    (click)="guardarUsuario()"
+    class="btn btn-primary mt-4"
+    *ngIf="!actualizando"
+  >
+    Guardar
+  </button>
+  <div class="row mt-4 btn-group" *ngIf="actualizando">
+    <button
+      (click)="actualizarUsuario(usuario.id)"
+      class="btn btn-success col-6"
+    >
+      Actualizar usuario
+    </button>
+    <button (click)="reiniciarFormulario()" class="btn btn-danger col-6">
+      Cancelar
+    </button>
+  </div>
+</form>
+
+<h3 class="mt-4">Lista de usuarios</h3>
+<hr>
+<div class="table-responsive">
+  <table class="table table-hover text-center align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Permiso</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios; let indice = index">
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.apellidoPaterno }}</td>
+        <td>{{ usuario.apellidoMaterno }}</td>
+        <td>{{ usuario.permisos }}</td>
+        <td class="row">
+          <div class="btn-group btn-group-sm col" role="group">
+            <button
+              class="btn btn-warning"
+              (click)="cargarUsuario(usuario, indice)"
+            >
+              Editar
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="eliminarUsuario(usuario.id)"
+            >
+              Eliminar
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
