@@ -1,1 +1,5 @@
-<p>login works!</p>
+<h2>Inicia sesión</h2>
+<form (ngSubmit)="login()" class="row" autocomplete="off">
+  <input type="text" name="nombre" id="nombre" [(ngModel)]="nombre" placeholder="Nombre del usuario" class="form-control">
+  <button class="btn btn-outline-primary mt-2">Iniciar sesión</button>
+</form>
